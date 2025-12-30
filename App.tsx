@@ -150,7 +150,7 @@ export default function App() {
     // If a plan exists, we show the tabbed interface
     if (plan) {
         return (
-            <div className="pt-20 pb-24" key={`plan-view-${resetKey}`}>
+            <div className="pt-20 pb-24 overflow-x-hidden w-full" key={`plan-view-${resetKey}`}>
                 {navTab === 'chat' && <AIChat plan={plan} />}
                 {navTab === 'progress' && <ProgressTracker />}
                 {(navTab === 'plan' || navTab === 'home') && <PlanResult plan={plan} />}
@@ -161,7 +161,7 @@ export default function App() {
     // Processing State
     if (currentStep === Step.Processing) {
       return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6 text-center pb-24">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6 text-center pb-24 overflow-hidden">
           <div className="relative w-24 h-24 mb-8">
               <div className="absolute inset-0 border-4 border-purple-100 rounded-full"></div>
               <div className="absolute inset-0 border-4 border-purple-600 rounded-full border-t-transparent animate-spin"></div>
@@ -177,8 +177,8 @@ export default function App() {
 
     // Wizard Form
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans pb-32" key={`wizard-${resetKey}`}>
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans pb-32 overflow-x-hidden" key={`wizard-${resetKey}`}>
+        <div className="sm:mx-auto sm:w-full sm:max-w-md w-full">
           <div className="flex justify-between items-center mb-8 px-2">
              <div className="w-8"></div> {/* Spacer for centering */}
              <AppLogo />
@@ -234,7 +234,7 @@ export default function App() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => updateField('name', e.target.value)}
-                      className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3 transition-colors"
+                      className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3 transition-colors"
                       placeholder="Seu nome"
                     />
                   </div>
@@ -246,7 +246,7 @@ export default function App() {
                               type="number"
                               value={formData.age}
                               onChange={(e) => updateField('age', Number(e.target.value))}
-                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                           />
                       </div>
                       <div>
@@ -254,7 +254,7 @@ export default function App() {
                           <select
                               value={formData.gender}
                               onChange={(e) => updateField('gender', e.target.value)}
-                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                           >
                               {Object.values(Gender).map(g => <option key={g} value={g}>{g}</option>)}
                           </select>
@@ -287,7 +287,7 @@ export default function App() {
                               type="number"
                               value={formData.height}
                               onChange={(e) => updateField('height', Number(e.target.value))}
-                              className="block w-full pl-10 rounded-lg border-slate-200 bg-slate-50 focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                              className="block w-full pl-10 rounded-lg border-slate-200 bg-slate-50 focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                               placeholder="165"
                           />
                       </div>
@@ -300,7 +300,7 @@ export default function App() {
                               type="number"
                               value={formData.currentWeight}
                               onChange={(e) => updateField('currentWeight', Number(e.target.value))}
-                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                           />
                       </div>
                       <div>
@@ -309,7 +309,7 @@ export default function App() {
                               type="number"
                               value={formData.goalWeight}
                               onChange={(e) => updateField('goalWeight', Number(e.target.value))}
-                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                              className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                           />
                       </div>
                   </div>
@@ -335,7 +335,7 @@ export default function App() {
                       <select
                           value={formData.activityLevel}
                           onChange={(e) => updateField('activityLevel', e.target.value)}
-                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                       >
                           {Object.values(ActivityLevel).map(a => <option key={a} value={a}>{a}</option>)}
                       </select>
@@ -346,7 +346,7 @@ export default function App() {
                       <select
                           value={formData.goal}
                           onChange={(e) => updateField('goal', e.target.value)}
-                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                       >
                            {Object.values(Goal).map(g => <option key={g} value={g}>{g}</option>)}
                       </select>
@@ -358,7 +358,7 @@ export default function App() {
                           value={formData.dietaryRestrictions}
                           onChange={(e) => updateField('dietaryRestrictions', e.target.value)}
                           rows={2}
-                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                          className="mt-1 block w-full rounded-lg border-slate-200 bg-slate-50 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                           placeholder="Ex: Sem glúten, vegetariano, alergia a amendoim..."
                       />
                   </div>

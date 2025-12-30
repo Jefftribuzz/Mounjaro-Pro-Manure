@@ -178,7 +178,7 @@ const ProgressTracker: React.FC = () => {
                         value={weight}
                         onChange={(e) => setWeight(e.target.value)}
                         placeholder="kg"
-                        className="block w-full pl-10 rounded-lg border-slate-200 bg-slate-50 focus:border-purple-500 focus:ring-purple-500 sm:text-sm p-3"
+                        className="block w-full pl-10 rounded-lg border-slate-200 bg-slate-50 focus:border-purple-500 focus:ring-purple-500 text-base p-3"
                     />
                 </div>
             </div>
